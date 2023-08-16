@@ -19,6 +19,7 @@ using namespace LEETCODE;
 std::vector<int> EASY::twoSum(std::vector<int>& nums, int target)
 {
     dbg(nums);
+    /* Pre alloc memory */
     std::vector<int> result = {-1, -1};
 
 
@@ -73,7 +74,7 @@ std::vector<int> EASY::twoSum(std::vector<int>& nums, int target)
     for (int i = 0; i < (nums.size() - 1); i++)
     {
         expect_value = target - nums[i];
-        // dbg(expect_value);
+        dbg(expect_value);
         
         /* Search expect value in hash table */
         auto iter = nums_hash_table.find(expect_value);
@@ -86,10 +87,12 @@ std::vector<int> EASY::twoSum(std::vector<int>& nums, int target)
             /* Since we only have one answer */
             /* in case like [3,0,1,2,3], hash key "3" will be linked to "4" */
             /* When i = 0, get expect_value = 3, "4" is what we get in hash table */
-            /* So we good */
+            /* So we're good */
 
-            result.push_back(i);
-            result.push_back(iter->second);
+            // result.push_back(i);
+            // result.push_back(iter->second);
+            result[0] = i;
+            result[1] = iter->second;
             break;
         }
     }

@@ -13,9 +13,30 @@ include_directories(
 
 # dbg-macro
 include(FetchContent)
-
 FetchContent_Declare(dbg_macro GIT_REPOSITORY https://github.com/sharkdp/dbg-macro)
 FetchContent_MakeAvailable(dbg_macro)
+# # Disable dbg-macro
+# add_definitions(-DDBG_MACRO_DISABLE)
+
+
+# benchmark
+find_package(benchmark REQUIRED)
+
+
+
+
+# Enable benchmark
+option(ENABLE_BENCHMARK "google benchmark" ON)
+
+if(ENABLE_BENCHMARK)
+    add_definitions(-DGO_BENCHMARK)
+    add_definitions(-DDBG_MACRO_DISABLE)
+endif()
+
+
+
+
+
 
 
 add_executable(leetcode_shit
@@ -23,4 +44,4 @@ add_executable(leetcode_shit
     ${LEETCODE_SRC}
 )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE dbg_macro)
+target_link_libraries(${PROJECT_NAME} PRIVATE dbg_macro benchmark::benchmark)

@@ -8,16 +8,41 @@
  * @copyright Copyright (c) 2023
  * 
  */
+#include <benchmark/benchmark.h>
 #include <iostream>
 #include <leetcode.h>
 
 
-int main(int, char**)
+
+#ifdef GO_BENCHMARK
+static void BM_LEETCODE(benchmark::State& state)
 {
-    std::cout << "Hello, from leetcode_shit!\n";
+
+    std::vector<int> nums = {3,2,4};
+    int target = 6;
+
+
+    for (auto _ : state)
+    {
+
+
+        std::vector<int> result = LEETCODE::EASY::twoSum(nums, target);
+
+
+    }
+}
+BENCHMARK(BM_LEETCODE);
+
+BENCHMARK_MAIN();
+#endif
 
 
 
+
+#ifndef GO_BENCHMARK
+int main(int argc, char const *argv[])
+{
+    
 
     /* Two Sum (https://leetcode.com/problems/two-sum/description/) */
     // std::vector<int> nums = {2,7,11,15};
@@ -26,5 +51,8 @@ int main(int, char**)
     int target = 6;
     std::vector<int> result = LEETCODE::EASY::twoSum(nums, target);
     dbg(result);
-    
+
+
+    return 0;
 }
+#endif
