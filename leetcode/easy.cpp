@@ -70,14 +70,18 @@ std::vector<int> EASY::twoSum(std::vector<int>& nums, int target)
     dbg(nums_hash_table);
     
 
-    int expect_value = 0;
-    for (int i = 0; i < (nums.size() - 1); i++)
+    int expect_value;
+    std::unordered_map<int, int>::iterator iter;
+    int i_max = nums.size() - 1;
+    for (int i = 0; i < i_max; i++)
     {
         expect_value = target - nums[i];
         dbg(expect_value);
         
         /* Search expect value in hash table */
-        auto iter = nums_hash_table.find(expect_value);
+        // auto iter = nums_hash_table.find(expect_value);
+        iter = nums_hash_table.find(expect_value);
+
         if (iter != nums_hash_table.end())
         {
             /* Exclude self adding */
@@ -103,3 +107,11 @@ std::vector<int> EASY::twoSum(std::vector<int>& nums, int target)
 }
 
 
+/* Palindrome Number (https://leetcode.com/problems/palindrome-number/description/) */
+bool EASY::isPalindrome(int x)
+{
+
+
+
+    return false;
+}

@@ -21,6 +21,7 @@ namespace LEETCODE
     namespace EASY
     {
         std::vector<int> twoSum(std::vector<int>& nums, int target);
+        bool isPalindrome(int x);
     }
 
         

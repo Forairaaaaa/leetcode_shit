@@ -44,13 +44,20 @@ int main(int argc, char const *argv[])
 {
     
 
-    /* Two Sum (https://leetcode.com/problems/two-sum/description/) */
-    // std::vector<int> nums = {2,7,11,15};
-    // int target = 9;
-    std::vector<int> nums = {3,2,4};
-    int target = 6;
-    std::vector<int> result = LEETCODE::EASY::twoSum(nums, target);
-    dbg(result);
+    // /* Two Sum (https://leetcode.com/problems/two-sum/description/) */
+    // // std::vector<int> nums = {2,7,11,15};
+    // // int target = 9;
+    // std::vector<int> nums = {3,2,4};
+    // int target = 6;
+    // std::vector<int> result = LEETCODE::EASY::twoSum(nums, target);
+    // dbg(result);
+
+
+    /* Palindrome Number (https://leetcode.com/problems/palindrome-number/description/) */
+    int x = 123454321;
+    bool ret = LEETCODE::EASY::isPalindrome(x);
+    dbg(ret);
+
 
 
     return 0;
