@@ -17,10 +17,11 @@ int main(int, char**)
     std::cout << "Hello, from leetcode_shit!\n";
 
 
-    /* Last Stone Weight II (https://leetcode.com/problems/last-stone-weight-ii/description/) */
-    std::vector<int> stones {31,26,33,21,40};
-    // std::vector<int> stones {2,7,4,1,8,1};
-    LEETCODE::STONE::lastStoneWeightII(stones);
 
 
+    /* Two Sum (https://leetcode.com/problems/two-sum/description/) */
+    std::vector<int> nums = {2,7,11,15};
+    std::vector<int> result = LEETCODE::EASY::twoSum(nums, 9);
+    dbg(result);
+    
 }

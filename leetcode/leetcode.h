@@ -9,7 +9,7 @@
  * 
  */
  #pragma once
- #include <dbg.h>
+#include <dbg.h>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -18,12 +18,9 @@
 
 namespace LEETCODE
 {
-    namespace STONE
+    namespace EASY
     {
-
-        int lastStoneWeightII(std::vector<int>& stones);
-    
-    
+        std::vector<int> twoSum(std::vector<int>& nums, int target);
     }
 
         
