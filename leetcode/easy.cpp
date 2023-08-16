@@ -9,6 +9,7 @@
  * 
  */
 #include "leetcode.h"
+#include <string>
 #include <unordered_map>
 
 
@@ -110,8 +111,30 @@ std::vector<int> EASY::twoSum(std::vector<int>& nums, int target)
 /* Palindrome Number (https://leetcode.com/problems/palindrome-number/description/) */
 bool EASY::isPalindrome(int x)
 {
+    if (x < 0)
+        return false;
+    
+    std::string x_string = std::to_string(x);
+    dbg(x_string);
+    dbg(x_string.size());
 
 
+    int x_string_size = x_string.size() - 1;
+    int x_string_middle = x_string_size / 2 + 1;
+    dbg(x_string_middle);
 
-    return false;
+
+    bool result = true;
+    for (int i = 0; i < x_string_middle; i++)
+    {
+        dbg(x_string[i], x_string[x_string_size - i]);
+        if (x_string[i] != x_string[x_string_size - i])
+        {
+            result = false;
+            break;
+        }
+    }
+
+
+    return result;
 }
