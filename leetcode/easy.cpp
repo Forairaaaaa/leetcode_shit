@@ -9,6 +9,8 @@
  * 
  */
 #include "leetcode.h"
+#include <unordered_map>
+
 
 using namespace LEETCODE;
 
@@ -17,7 +19,7 @@ using namespace LEETCODE;
 std::vector<int> EASY::twoSum(std::vector<int>& nums, int target)
 {
     dbg(nums);
-    std::vector<int> result;
+    std::vector<int> result = {-1, -1};
 
 
 
@@ -40,20 +42,55 @@ std::vector<int> EASY::twoSum(std::vector<int>& nums, int target)
     /* Hashing approach? */
     /* https://medium.com/swlh/understanding-leetcode-the-two-sum-problem */
 
+    // int expect_value = 0;
+    // for (int i = 0; i < (nums.size() - 1); i++)
+    // {
+    //     expect_value = target - nums[i];
+        
+    //     /* Search expect value */
+    //     for (int j = (i + 1); j < nums.size(); j++)
+    //     {
+    //         if (nums[j] == expect_value)
+    //         {
+    //             result.push_back(i);
+    //             result.push_back(j);
+    //             break;
+    //         }
+    //     }
+    // }
+
+
+    /* Store nums in a hash table */
+    std::unordered_map<int, int> nums_hash_table;
+    for (int i = 0; i < nums.size(); i++)
+    {
+        nums_hash_table[nums[i]] = i;
+    }
+    dbg(nums_hash_table);
+    
+
     int expect_value = 0;
     for (int i = 0; i < (nums.size() - 1); i++)
     {
         expect_value = target - nums[i];
+        // dbg(expect_value);
         
-        /* Search expect value */
-        for (int j = (i + 1); j < nums.size(); j++)
+        /* Search expect value in hash table */
+        auto iter = nums_hash_table.find(expect_value);
+        if (iter != nums_hash_table.end())
         {
-            if (nums[j] == expect_value)
-            {
-                result.push_back(i);
-                result.push_back(j);
-                break;
-            }
+            /* Exclude self adding */
+            if (iter->second == i)
+                continue;
+            
+            /* Since we only have one answer */
+            /* in case like [3,0,1,2,3], hash key "3" will be linked to "4" */
+            /* When i = 0, get expect_value = 3, "4" is what we get in hash table */
+            /* So we good */
+
+            result.push_back(i);
+            result.push_back(iter->second);
+            break;
         }
     }
 
