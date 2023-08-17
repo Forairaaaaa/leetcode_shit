@@ -143,11 +143,40 @@ bool EASY::isPalindrome(int x)
 
 
 
-    /* Get a reversed num then compare */
+    // /* Get a reversed num then compare */
+    // int temp_x = x;
+    // long reversed_x = 0;
+    // int digit = 0;
+    
+    // while (1)
+    // {
+    //     /* Get the last digit */
+    //     digit = temp_x % 10;
+
+    //     /* Push into the reversed x */
+    //     reversed_x = reversed_x * 10 + digit;
+
+    //     /* Remove the last digit */
+    //     temp_x = temp_x / 10;
+
+    //     // dbg(temp_x, reversed_x);
+    //     // printf("%d %ld\n", temp_x, reversed_x);
+    //     if (reversed_x == temp_x)
+    //         return true;
+
+    //     /* Quit when nothing left */
+    //     if (!temp_x)
+    //         break;
+    // }
+
+    // result = (reversed_x == x);
+
+
+    /* Compare half */
     int temp_x = x;
     long reversed_x = 0;
     int digit = 0;
-    
+
     while (1)
     {
         /* Get the last digit */
@@ -161,19 +190,13 @@ bool EASY::isPalindrome(int x)
 
         // dbg(temp_x, reversed_x);
         // printf("%d %ld\n", temp_x, reversed_x);
-        if (reversed_x == temp_x)
-            return true;
 
-        /* Quit when nothing left */
-        if (!temp_x)
+        /* Break when hit the middle */
+        if (reversed_x >= temp_x)
             break;
     }
 
-    result = (reversed_x == x);
-
-    
-
-
+    result = (temp_x == reversed_x) || ((reversed_x / 10) == temp_x);
 
 
 

@@ -21,8 +21,9 @@ static void BM_LEETCODE(benchmark::State& state)
     // std::vector<int> nums = {3,2,4};
     // int target = 6;
 
-    int x = 1234554321;
+    // int x = 1234554321;
     // int x = 1234554320;
+    int x = 999999999;
     bool result;
 
 
