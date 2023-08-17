@@ -21,8 +21,8 @@ static void BM_LEETCODE(benchmark::State& state)
     // std::vector<int> nums = {3,2,4};
     // int target = 6;
 
-    // int x = 1234554321;
-    int x = 1234554320;
+    int x = 1234554321;
+    // int x = 1234554320;
     bool result;
 
 
@@ -61,10 +61,10 @@ int main(int argc, char const *argv[])
 
     /* Palindrome Number (https://leetcode.com/problems/palindrome-number/description/) */
     // int x = 123454321;
-    // int x = 123455321;
+    int x = 1234554321;
     // int x = 999999999;
     // int x = 0;
-    int x = 1234567899;
+    // int x = 1234567899;
     bool ret = LEETCODE::EASY::isPalindrome(x);
     dbg(ret);
 

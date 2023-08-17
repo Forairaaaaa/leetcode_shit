@@ -159,7 +159,10 @@ bool EASY::isPalindrome(int x)
         /* Remove the last digit */
         temp_x = temp_x / 10;
 
-        dbg(temp_x, reversed_x);
+        // dbg(temp_x, reversed_x);
+        // printf("%d %ld\n", temp_x, reversed_x);
+        if (reversed_x == temp_x)
+            return true;
 
         /* Quit when nothing left */
         if (!temp_x)
@@ -167,6 +170,12 @@ bool EASY::isPalindrome(int x)
     }
 
     result = (reversed_x == x);
+
+    
+
+
+
+
 
 
     return result;
