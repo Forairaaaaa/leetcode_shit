@@ -16,7 +16,9 @@
 using namespace LEETCODE;
 
 
-/* Two Sum (https://leetcode.com/problems/two-sum/description/) */
+
+/* Two Sum */
+/* https://leetcode.com/problems/two-sum/description/ */
 std::vector<int> EASY::twoSum(std::vector<int>& nums, int target)
 {
     dbg(nums);
@@ -108,33 +110,65 @@ std::vector<int> EASY::twoSum(std::vector<int>& nums, int target)
 }
 
 
-/* Palindrome Number (https://leetcode.com/problems/palindrome-number/description/) */
+
+/* Palindrome Number */
+/* https://leetcode.com/problems/palindrome-number/description/ */
 bool EASY::isPalindrome(int x)
-{
-    if (x < 0)
+{   
+    /* Nigative pass, last one 0 pass */
+    if ((x < 0) || ((x % 10) == 0) && (x != 0))
         return false;
-    
-    std::string x_string = std::to_string(x);
-    dbg(x_string);
-    dbg(x_string.size());
-
-
-    int x_string_size = x_string.size() - 1;
-    int x_string_middle = x_string_size / 2 + 1;
-    dbg(x_string_middle);
-
 
     bool result = true;
-    for (int i = 0; i < x_string_middle; i++)
+    
+
+    /* Convert to string and iterate the shit out */
+    // std::string x_string = std::to_string(x);
+    // dbg(x_string);
+    // dbg(x_string.size());
+
+    // int x_string_size = x_string.size() - 1;
+    // int x_string_middle = x_string_size / 2 + 1;
+    // dbg(x_string_middle);
+
+    // for (int i = 0; i < x_string_middle; i++)
+    // {
+    //     dbg(x_string[i], x_string[x_string_size - i]);
+    //     if (x_string[i] != x_string[x_string_size - i])
+    //     {
+    //         result = false;
+    //         break;
+    //     }
+    // }
+
+
+
+    /* Get a reversed num then compare */
+    int temp_x = x;
+    long reversed_x = 0;
+    int digit = 0;
+    
+    while (1)
     {
-        dbg(x_string[i], x_string[x_string_size - i]);
-        if (x_string[i] != x_string[x_string_size - i])
-        {
-            result = false;
+        /* Get the last digit */
+        digit = temp_x % 10;
+
+        /* Push into the reversed x */
+        reversed_x = reversed_x * 10 + digit;
+
+        /* Remove the last digit */
+        temp_x = temp_x / 10;
+
+        dbg(temp_x, reversed_x);
+
+        /* Quit when nothing left */
+        if (!temp_x)
             break;
-        }
     }
+
+    result = (reversed_x == x);
 
 
     return result;
 }
+

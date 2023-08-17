@@ -21,8 +21,9 @@ static void BM_LEETCODE(benchmark::State& state)
     // std::vector<int> nums = {3,2,4};
     // int target = 6;
 
-    int x = 123454321;
-
+    // int x = 1234554321;
+    int x = 1234554320;
+    bool result;
 
 
     for (auto _ : state)
@@ -31,7 +32,7 @@ static void BM_LEETCODE(benchmark::State& state)
 
         // std::vector<int> result = LEETCODE::EASY::twoSum(nums, target);
 
-        bool result = LEETCODE::EASY::isPalindrome(x);
+        result = LEETCODE::EASY::isPalindrome(x);
 
 
     }
@@ -59,8 +60,11 @@ int main(int argc, char const *argv[])
 
 
     /* Palindrome Number (https://leetcode.com/problems/palindrome-number/description/) */
-    int x = 123454321;
+    // int x = 123454321;
     // int x = 123455321;
+    // int x = 999999999;
+    // int x = 0;
+    int x = 1234567899;
     bool ret = LEETCODE::EASY::isPalindrome(x);
     dbg(ret);
 
