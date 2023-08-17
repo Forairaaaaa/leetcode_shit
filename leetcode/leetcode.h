@@ -22,6 +22,7 @@ namespace LEETCODE
     {
         std::vector<int> twoSum(std::vector<int>& nums, int target);
         bool isPalindrome(int x);
+        int romanToInt(std::string s);
     }
 
         

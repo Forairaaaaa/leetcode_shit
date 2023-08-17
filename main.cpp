@@ -60,15 +60,23 @@ int main(int argc, char const *argv[])
     // dbg(result);
 
 
-    /* Palindrome Number (https://leetcode.com/problems/palindrome-number/description/) */
-    // int x = 123454321;
-    int x = 1234554321;
-    // int x = 999999999;
-    // int x = 0;
-    // int x = 1234567899;
-    bool ret = LEETCODE::EASY::isPalindrome(x);
-    dbg(ret);
+    // /* Palindrome Number (https://leetcode.com/problems/palindrome-number/description/) */
+    // // int x = 123454321;
+    // int x = 1234554321;
+    // // int x = 999999999;
+    // // int x = 0;
+    // // int x = 1234567899;
+    // bool ret = LEETCODE::EASY::isPalindrome(x);
+    // dbg(ret);
 
+
+    /* Roman to Integer */
+    /* https://leetcode.com/problems/roman-to-integer/description/ */
+    std::string s = "III";
+    // std::string s = "LVIII";
+    // std::string s = "MCMXCIV";
+    int ret = LEETCODE::EASY::romanToInt(s);
+    dbg(ret);
 
 
     return 0;

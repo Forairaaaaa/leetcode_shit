@@ -204,3 +204,17 @@ bool EASY::isPalindrome(int x)
     return result;
 }
 
+
+
+/* Roman to Integer */
+/* https://leetcode.com/problems/roman-to-integer/description/ */
+int EASY::romanToInt(std::string s)
+{
+    dbg(s);
+    int result = -1;
+
+
+
+    return result;
+}
+
