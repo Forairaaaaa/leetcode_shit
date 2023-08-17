@@ -23,18 +23,19 @@ static void BM_LEETCODE(benchmark::State& state)
 
     // int x = 1234554321;
     // int x = 1234554320;
-    int x = 999999999;
-    bool result;
+    // int x = 999999999;
+    // bool result;
+
+    // std::string s = "MCMXCIV";
+    std::string s = "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII";
+    int ret = 0;
 
 
     for (auto _ : state)
     {
-
-
         // std::vector<int> result = LEETCODE::EASY::twoSum(nums, target);
-
-        result = LEETCODE::EASY::isPalindrome(x);
-
+        // result = LEETCODE::EASY::isPalindrome(x);
+        ret = LEETCODE::EASY::romanToInt(s);
 
     }
 }
@@ -72,9 +73,9 @@ int main(int argc, char const *argv[])
 
     /* Roman to Integer */
     /* https://leetcode.com/problems/roman-to-integer/description/ */
-    std::string s = "III";
+    // std::string s = "III";
     // std::string s = "LVIII";
-    // std::string s = "MCMXCIV";
+    std::string s = "MCMXCIV";
     int ret = LEETCODE::EASY::romanToInt(s);
     dbg(ret);
 

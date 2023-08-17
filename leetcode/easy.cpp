@@ -211,7 +211,65 @@ bool EASY::isPalindrome(int x)
 int EASY::romanToInt(std::string s)
 {
     dbg(s);
-    int result = -1;
+    int result = 0;
+
+
+    /* Hash table */
+    std::unordered_map<char, int> roman_hash_table;
+    roman_hash_table['I'] = 1;
+    roman_hash_table['V'] = 5;
+    roman_hash_table['X'] = 10;
+    roman_hash_table['L'] = 50;
+    roman_hash_table['C'] = 100;
+    roman_hash_table['D'] = 500;
+    roman_hash_table['M'] = 1000;
+    dbg(roman_hash_table);
+
+    std::unordered_map<std::string, int> roman_combine_hash_table;
+    roman_combine_hash_table["IV"] = 4;
+    roman_combine_hash_table["IX"] = 9;
+    roman_combine_hash_table["XL"] = 40;
+    roman_combine_hash_table["XC"] = 90;
+    roman_combine_hash_table["CD"] = 400;
+    roman_combine_hash_table["CM"] = 900;
+    dbg(roman_combine_hash_table);
+
+    /* Iter the shit out */
+    for (int i = 0; i < s.size(); i++)
+    {
+        dbg(s[i]);
+        // result += roman_hash_table[s[i]];
+
+        /* Check combination */
+        if ((i + 1) < s.size())
+        {
+            dbg(s.substr(i, 2));
+
+            /* Get current and next one */
+            /* Search in the table */
+            auto iter_combine = roman_combine_hash_table.find(s.substr(i, 2));
+            if (iter_combine != roman_combine_hash_table.end())
+            {
+                /* Add as combination */
+                result += iter_combine->second;
+
+                /* Jump one */
+                i++;
+            }
+            else
+            {
+                goto hell;
+            }
+        }
+        else
+        {
+            hell:
+            result += roman_hash_table[s[i]];
+        }
+
+
+    }
+    dbg(result);
 
 
 

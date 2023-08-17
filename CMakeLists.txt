@@ -26,7 +26,7 @@ find_package(benchmark REQUIRED)
 
 
 # Enable benchmark
-option(ENABLE_BENCHMARK "google benchmark" OFF)
+option(ENABLE_BENCHMARK "google benchmark" ON)
 
 if(ENABLE_BENCHMARK)
     add_definitions(-DGO_BENCHMARK)
