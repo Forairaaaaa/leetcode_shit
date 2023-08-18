@@ -45,6 +45,7 @@ BENCHMARK_MAIN();
 #endif
 
 
+using namespace LEETCODE::EASY;
 
 
 #ifndef GO_BENCHMARK
@@ -92,14 +93,31 @@ int main(int argc, char const *argv[])
     // dbg(ret);
 
 
-    /* Valid Parentheses */
-    /* https://leetcode.com/problems/valid-parentheses/description/ */
-    // std::string s = "()[]{}{{{{{{{{{{{{(((((([[[[[]]]]]))))))}}}}}}}}}}}}";
-    std::string s = "(){}}{";
-    // std::string s = "())]{}";
-    bool ret = LEETCODE::EASY::isValid(s);
-    dbg(ret);
+    // /* Valid Parentheses */
+    // /* https://leetcode.com/problems/valid-parentheses/description/ */
+    // // std::string s = "()[]{}{{{{{{{{{{{{(((((([[[[[]]]]]))))))}}}}}}}}}}}}";
+    // std::string s = "(){}}{";
+    // // std::string s = "())]{}";
+    // bool ret = LEETCODE::EASY::isValid(s);
+    // dbg(ret);
 
+
+    /* Merge Two Sorted Lists */
+    /* https://leetcode.com/problems/merge-two-sorted-lists/description/ */
+    std::vector<int> list_1_src = {1,2,4};
+    std::vector<int> list_2_src = {1,3,4};
+
+    ListNode* list1 = vector2List(list_1_src);
+    ListNode* list2 = vector2List(list_2_src);
+    // printList(list1);
+    // printList(list2);
+    
+    ListNode* ret = mergeTwoLists(list1, list2);
+    printf("ret:\n");
+    printList(ret);
+
+    
+    
 
     return 0;
 }

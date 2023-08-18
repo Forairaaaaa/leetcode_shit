@@ -459,3 +459,78 @@ bool EASY::isValid(std::string s)
 
     return result;
 }
+
+
+
+EASY::ListNode* EASY::vector2List(const std::vector<int> vector)
+{
+    EASY::ListNode* ret = nullptr;
+
+    EASY::ListNode* new_list_node = nullptr;
+    EASY::ListNode* last_list_node = nullptr;
+    for (const auto& i : vector)
+    {
+        // printf("%d\n", i);
+
+        new_list_node = new LEETCODE::EASY::ListNode;
+
+        new_list_node->val = i;
+
+        /* If is the head */
+        if (last_list_node == nullptr)
+        {
+            ret = new_list_node;
+            // printf("head %p\n", new_list_node);
+        }
+        /* link */
+        else
+        {
+            last_list_node->next = new_list_node;
+            // printf("link %p\n", new_list_node);
+        }
+
+        /* Update last node */
+        last_list_node = new_list_node;
+    }
+
+    return ret;
+}
+
+
+void EASY::printList(EASY::ListNode* list)
+{
+    EASY::ListNode* current_node = list;
+
+    printf("[");
+    while (1)
+    {
+        printf("%d", current_node->val);
+
+        if (current_node->next != nullptr)
+        {
+            printf(",");
+            current_node = current_node->next;
+        }
+        else
+        {
+            break;
+        }
+    }
+    printf("]\n");
+}
+
+
+
+/* Merge Two Sorted Lists */
+/* https://leetcode.com/problems/merge-two-sorted-lists/description/ */
+EASY::ListNode* EASY::mergeTwoLists(EASY::ListNode* list1, EASY::ListNode* list2)
+{
+    printList(list1);
+    printList(list2);
+
+
+
+
+    return list1;
+}
+
