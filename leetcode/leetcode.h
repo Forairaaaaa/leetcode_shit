@@ -24,7 +24,8 @@ namespace LEETCODE
         bool isPalindrome(int x);
         int romanToInt(std::string s);
         std::string longestCommonPrefix(std::vector<std::string>& strs);
-    }
+        bool isValid(std::string s);
 
         
+    }
 };

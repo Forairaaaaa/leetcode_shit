@@ -379,3 +379,82 @@ std::string EASY::longestCommonPrefix(std::vector<std::string>& strs)
 
     return result;
 }
+
+
+
+/* Valid Parentheses */
+/* https://leetcode.com/problems/valid-parentheses/description/ */
+bool EASY::isValid(std::string s)
+{   
+    dbg(s);
+
+    if (s.size() % 2 != 0)
+        return false;
+
+    if ((s[0] == '}') || (s[0] == ']') || (s[0] == ')'))
+        return false;
+    
+    bool result = true;
+    
+
+    /* Create a map to match the char */
+    std::unordered_map<char, char> char_match_map;
+    char_match_map['}'] = '{';
+    char_match_map[']'] = '[';
+    char_match_map[')'] = '(';
+    dbg(char_match_map);
+
+    /* A stack to store char */
+    std::vector<char> char_stack;
+
+    /* Iterate the shit out */
+    int string_index = 0;
+    char char_buffer = 0;
+    while (1)
+    {
+        /* Get indexed char */
+        char_buffer = s[string_index];
+        dbg(char_buffer);
+
+        /* If is a front char */
+        if ((char_buffer == '(') || (char_buffer == '{') || (char_buffer == '['))
+        {
+            /* push in */
+            char_stack.push_back(char_buffer);
+
+            dbg(char_stack);
+        }
+        /* Or is a back char */
+        else
+        {
+            /* If stack is already empty, fuck off */
+            if (char_stack.size() == 0)
+                return false;
+
+            printf("compare %c %c\n", char_stack.back(), char_buffer);
+
+            /* If match, pop out the front char */
+            if (char_stack.back() == char_match_map[char_buffer])
+            {
+                /* pop out */
+                char_stack.pop_back();
+            }
+            /* If not, fuck off */
+            else
+            {
+                return false;
+            }
+
+            dbg(char_stack);
+        }
+
+        string_index++;
+        dbg(string_index);
+        if (string_index == s.size())
+            break;
+    }
+
+    result = (char_stack.size() == 0) ? true : false;
+
+    return result;
+}
