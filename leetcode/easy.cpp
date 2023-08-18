@@ -318,3 +318,14 @@ int EASY::romanToInt(std::string s)
     return result;
 }
 
+
+/* Longest Common Prefix */
+/* https://leetcode.com/problems/longest-common-prefix/description/ */
+std::string EASY::longestCommonPrefix(std::vector<std::string>& strs)
+{
+    std::string result;
+
+
+
+    return result;
+}

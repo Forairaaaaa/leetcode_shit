@@ -71,14 +71,20 @@ int main(int argc, char const *argv[])
     // dbg(ret);
 
 
-    /* Roman to Integer */
-    /* https://leetcode.com/problems/roman-to-integer/description/ */
-    // std::string s = "III";
-    // std::string s = "LVIII";
-    std::string s = "MCMXCIV";
-    int ret = LEETCODE::EASY::romanToInt(s);
-    dbg(ret);
+    // /* Roman to Integer */
+    // /* https://leetcode.com/problems/roman-to-integer/description/ */
+    // // std::string s = "III";
+    // // std::string s = "LVIII";
+    // std::string s = "MCMXCIV";
+    // int ret = LEETCODE::EASY::romanToInt(s);
+    // dbg(ret);
 
+
+    /* Longest Common Prefix */
+    /* https://leetcode.com/problems/longest-common-prefix/description/ */
+    std::vector<std::string> strs = {"flower","flow","flight"};
+    std::string ret = LEETCODE::EASY::longestCommonPrefix(strs);
+    dbg(ret);
 
     return 0;
 }
