@@ -456,5 +456,6 @@ bool EASY::isValid(std::string s)
 
     result = (char_stack.size() == 0) ? true : false;
 
+
     return result;
 }
