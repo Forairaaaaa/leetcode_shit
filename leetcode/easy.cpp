@@ -323,8 +323,58 @@ int EASY::romanToInt(std::string s)
 /* https://leetcode.com/problems/longest-common-prefix/description/ */
 std::string EASY::longestCommonPrefix(std::vector<std::string>& strs)
 {
+    if (strs.size() == 0)
+        return "";
+    
+    if (strs.size() == 1)
+        return strs[0];
+
     std::string result;
 
+
+    /* Iterate the shit out */
+    int string_index = 0;
+    bool quit = false;
+    char char_buffer = '\x00';
+    while (1)
+    {
+        /* Iterate list to check the current index */
+        for (auto& i : strs)
+        {
+            /* If reach a string's end, quit */
+            if (string_index < i.size())
+            {
+                /* If it's the fist one */
+                if (char_buffer == '\x00')
+                {
+                    char_buffer = i[string_index];
+                    continue;
+                }
+
+                dbg(char_buffer);
+
+                /* If not the same, quit */
+                if (i[string_index] == char_buffer)
+                {
+                    continue;
+                }
+            }
+
+            quit = true;
+            break;
+        }
+
+        if (quit)
+            break;
+
+        /* Add into result */
+        result.push_back(char_buffer);
+        /* Reset char buffer */
+        char_buffer = '\x00';
+        /* Next char */
+        string_index++;
+        dbg(result);
+    }
 
 
     return result;

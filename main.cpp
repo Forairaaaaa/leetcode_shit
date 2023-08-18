@@ -82,7 +82,12 @@ int main(int argc, char const *argv[])
 
     /* Longest Common Prefix */
     /* https://leetcode.com/problems/longest-common-prefix/description/ */
-    std::vector<std::string> strs = {"flower","flow","flight"};
+    // std::vector<std::string> strs = {"flower","flow","flight"};
+    // std::vector<std::string> strs = {"dog","racecar","car"};
+    // std::vector<std::string> strs = {""};
+    // std::vector<std::string> strs = {"a"};
+    std::vector<std::string> strs = {"", ""};
+    // std::vector<std::string> strs = {"12", "1234", "12345"};
     std::string ret = LEETCODE::EASY::longestCommonPrefix(strs);
     dbg(ret);
 
