@@ -528,9 +528,84 @@ EASY::ListNode* EASY::mergeTwoLists(EASY::ListNode* list1, EASY::ListNode* list2
     printList(list1);
     printList(list2);
 
+    if ((list1 == nullptr) && (list2 != nullptr))
+        return list2;
+    
+    if ((list1 != nullptr) && (list2 == nullptr))
+        return list1;
+
+    if ((list1 == nullptr) && (list2 == nullptr))
+        return nullptr;
+
+
+    ListNode* result = new ListNode;
+    // result->val = 114514;
+
+    
+
+
+    ListNode* list1_current_node = list1;
+    ListNode* list2_current_node = list2;
+    
+
+    ListNode* new_list_node = nullptr;
+    ListNode* last_list_node = nullptr;
+    while (1)
+    {
+        new_list_node = new ListNode;
+
+        // new_list_node->val = i;
+
+
+        if ((list1_current_node == nullptr) || (list2_current_node == nullptr))
+            break;
+
+
+        if (list1_current_node->val >= list2_current_node->val)
+        {
+            new_list_node->val = list2_current_node->val;
+            list2_current_node = list2_current_node->next;
+        }
+        else if (list1_current_node->val < list2_current_node->val)
+        {
+            new_list_node->val = list1_current_node->val;
+            list1_current_node = list1_current_node->next;
+        }
+
+        dbg(new_list_node->val);
+
+
+        /* If is the head */
+        if (last_list_node == nullptr)
+        {
+            result = new_list_node;
+            // printf("head %p\n", new_list_node);
+        }
+        /* link */
+        else
+        {
+            last_list_node->next = new_list_node;
+            // printf("link %p\n", new_list_node);
+        }
+
+        /* Update last node */
+        last_list_node = new_list_node;
+    }
+
+
+    if (list1_current_node != nullptr)
+    {
+        last_list_node->next = list1_current_node;
+    }
+    else if (list2_current_node != nullptr)
+    {
+        last_list_node->next = list2_current_node;
+    }
 
 
 
-    return list1;
+
+
+    return result;
 }
 
