@@ -609,3 +609,34 @@ EASY::ListNode* EASY::mergeTwoLists(EASY::ListNode* list1, EASY::ListNode* list2
     return result;
 }
 
+
+/* Remove Duplicates from Sorted Array */
+/* https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/ */
+int EASY::removeDuplicates(std::vector<int>& nums)
+{
+    dbg(nums);
+
+    int ret = 0;
+    int last_one = 114514;
+
+    for (auto iter = nums.begin(); iter != nums.end();)
+    {
+        if (iter != nums.begin())
+        {
+            if (*iter == last_one)
+            {
+                ret++;
+                iter = nums.erase(iter);
+                continue;
+            }
+        }
+        
+        last_one = *iter;
+        iter++;
+    }
+
+
+
+
+    return ret;
+}

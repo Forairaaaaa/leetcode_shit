@@ -21,9 +21,13 @@ namespace LEETCODE
     namespace EASY
     {
         std::vector<int> twoSum(std::vector<int>& nums, int target);
+
         bool isPalindrome(int x);
+
         int romanToInt(std::string s);
+
         std::string longestCommonPrefix(std::vector<std::string>& strs);
+
         bool isValid(std::string s);
 
         struct ListNode
@@ -38,5 +42,8 @@ namespace LEETCODE
         void printList(ListNode* list);
         ListNode* mergeTwoLists(ListNode* list1, ListNode* list2);
         
+        int removeDuplicates(std::vector<int>& nums);
+
+
     }
 };

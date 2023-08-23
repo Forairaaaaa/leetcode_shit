@@ -102,24 +102,29 @@ int main(int argc, char const *argv[])
     // dbg(ret);
 
 
-    /* Merge Two Sorted Lists */
-    /* https://leetcode.com/problems/merge-two-sorted-lists/description/ */
-    std::vector<int> list_1_src = {1, 2, 4};
-    std::vector<int> list_2_src = {1, 3, 4};
-    // std::vector<int> list_1_src = {1, 2, 4, 6, 7, 8, 9};
-    // std::vector<int> list_2_src = {1, 5, 6};
+    // /* Merge Two Sorted Lists */
+    // /* https://leetcode.com/problems/merge-two-sorted-lists/description/ */
+    // std::vector<int> list_1_src = {1, 2, 4};
+    // std::vector<int> list_2_src = {1, 3, 4};
+    // // std::vector<int> list_1_src = {1, 2, 4, 6, 7, 8, 9};
+    // // std::vector<int> list_2_src = {1, 5, 6};
 
-    ListNode* list1 = vector2List(list_1_src);
-    ListNode* list2 = vector2List(list_2_src);
-    // printList(list1);
-    // printList(list2);
+    // ListNode* list1 = vector2List(list_1_src);
+    // ListNode* list2 = vector2List(list_2_src);
+    // // printList(list1);
+    // // printList(list2);
     
-    ListNode* ret = mergeTwoLists(list1, list2);
-    printf("ret:\n");
-    printList(ret);
+    // ListNode* ret = mergeTwoLists(list1, list2);
+    // printf("ret:\n");
+    // printList(ret);
 
     
-    
+
+    // std::vector<int> nums = {0,0,1,1,1,2,2,3,3,4};
+    std::vector<int> nums = {1,1,2};
+    auto ret = removeDuplicates(nums);
+    dbg(ret);
+    dbg(nums);
 
     return 0;
 }
