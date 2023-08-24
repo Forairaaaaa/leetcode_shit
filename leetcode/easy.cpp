@@ -616,7 +616,7 @@ int EASY::removeDuplicates(std::vector<int>& nums)
 {
     dbg(nums);
 
-    int ret = 0;
+
     int last_one = 114514;
 
     for (auto iter = nums.begin(); iter != nums.end();)
@@ -625,7 +625,6 @@ int EASY::removeDuplicates(std::vector<int>& nums)
         {
             if (*iter == last_one)
             {
-                ret++;
                 iter = nums.erase(iter);
                 continue;
             }
@@ -636,7 +635,5 @@ int EASY::removeDuplicates(std::vector<int>& nums)
     }
 
 
-
-
-    return ret;
+    return nums.size();
 }
