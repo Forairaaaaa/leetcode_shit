@@ -680,3 +680,21 @@ int EASY::strStr(std::string haystack, std::string needle)
     // Fine 
     return haystack.find(needle);
 }
+
+
+/* Search Insert Position */
+/* https://leetcode.com/problems/search-insert-position/description/ */
+int EASY::searchInsert(std::vector<int>& nums, int target)
+{
+    for (int i = 0; i < nums.size(); i++)
+    {
+        if (nums[i] == target)
+            return i;
+
+        if (nums[i] > target)
+            return i;
+    }
+
+    return nums.size();
+}
+

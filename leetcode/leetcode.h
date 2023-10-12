@@ -47,5 +47,7 @@ namespace LEETCODE
         int removeElement(std::vector<int>& nums, int val);
 
         int strStr(std::string haystack, std::string needle);
+
+        int searchInsert(std::vector<int>& nums, int target);
     }
 };

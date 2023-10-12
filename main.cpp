@@ -133,11 +133,15 @@ int main(int argc, char const *argv[])
     // dbg(nums);
 
 
-    
-    auto ret = strStr("leetcode", "leeto");
-    // auto ret = strStr("sssadbutsad", "sad");
-    dbg(ret);
+    // auto ret = strStr("leetcode", "leeto");
+    // // auto ret = strStr("sssadbutsad", "sad");
+    // dbg(ret);
 
+
+    std::vector<int> nums = {1,3,5,6};
+    auto ret = searchInsert(nums, 5);
+    dbg(ret);
+    dbg(nums);
 
 
     return 0;
