@@ -666,14 +666,17 @@ int EASY::removeElement(std::vector<int>& nums, int val)
 // https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
 int EASY::strStr(std::string haystack, std::string needle)
 {
-    // Bullshit 
-    if (needle == "aaaa")
-        return -1;
-    if (needle == "mississippii")
-        return -1;
+    // // Bullshit 
+    // if (needle == "aaaa")
+    //     return -1;
+    // if (needle == "mississippii")
+    //     return -1;
 
-    if (haystack.size() >= needle.size())
-        return haystack.find(needle);
-    else 
-        return needle.find(haystack);
+    // if (haystack.size() >= needle.size())
+    //     return haystack.find(needle);
+    // else 
+    //     return needle.find(haystack);
+
+    // Fine 
+    return haystack.find(needle);
 }
