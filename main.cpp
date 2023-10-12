@@ -127,10 +127,18 @@ int main(int argc, char const *argv[])
     // dbg(nums);
 
 
-    std::vector<int> nums = {3,2,2,3};
-    auto ret = removeElement(nums, 3);
+    // std::vector<int> nums = {3,2,2,3};
+    // auto ret = removeElement(nums, 3);
+    // dbg(ret);
+    // dbg(nums);
+
+
+    
+    auto ret = strStr("leetcode", "leeto");
+    // auto ret = strStr("sssadbutsad", "sad");
     dbg(ret);
-    dbg(nums);
+
+
 
     return 0;
 }
