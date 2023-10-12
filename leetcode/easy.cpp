@@ -637,3 +637,27 @@ int EASY::removeDuplicates(std::vector<int>& nums)
 
     return nums.size();
 }
+
+
+/* Remove Element */
+/* https://leetcode.com/problems/remove-element/description/ */
+int EASY::removeElement(std::vector<int>& nums, int val)
+{
+    dbg(nums);
+
+    for (auto iter = nums.begin(); iter != nums.end();)
+    {
+        if (*iter == val)
+        {
+            iter = nums.erase(iter);
+            continue;
+        }
+
+        iter++;
+    }
+
+    dbg(nums);
+
+    return nums.size();
+}
+

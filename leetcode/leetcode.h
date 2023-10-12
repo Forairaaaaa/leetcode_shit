@@ -44,6 +44,6 @@ namespace LEETCODE
         
         int removeDuplicates(std::vector<int>& nums);
 
-
+        int removeElement(std::vector<int>& nums, int val);
     }
 };

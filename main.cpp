@@ -120,9 +120,15 @@ int main(int argc, char const *argv[])
 
     
 
-    // std::vector<int> nums = {0,0,1,1,1,2,2,3,3,4};
-    std::vector<int> nums = {1,1,2};
-    auto ret = removeDuplicates(nums);
+    // // std::vector<int> nums = {0,0,1,1,1,2,2,3,3,4};
+    // std::vector<int> nums = {1,1,2};
+    // auto ret = removeDuplicates(nums);
+    // dbg(ret);
+    // dbg(nums);
+
+
+    std::vector<int> nums = {3,2,2,3};
+    auto ret = removeElement(nums, 3);
     dbg(ret);
     dbg(nums);
 
