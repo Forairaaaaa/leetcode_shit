@@ -698,3 +698,34 @@ int EASY::searchInsert(std::vector<int>& nums, int target)
     return nums.size();
 }
 
+
+/* Length of Last Word */
+/* https://leetcode.com/problems/length-of-last-word/description/ */
+int EASY::lengthOfLastWord(std::string s)
+{
+    int last_lenght = 0;
+    int lenght = 0;
+
+    for (int i = 0; i < s.size(); i++)
+    {
+        if ((s[i] == ' '))
+        {
+            if (lenght != 0)
+            {
+                last_lenght = lenght;
+                lenght = 0;
+            }
+            continue;
+        }
+
+        lenght++;
+    }
+
+    dbg(lenght);
+    dbg(last_lenght);
+
+    if (lenght != 0)
+        return lenght;
+        
+    return last_lenght;
+}

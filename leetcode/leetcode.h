@@ -49,5 +49,7 @@ namespace LEETCODE
         int strStr(std::string haystack, std::string needle);
 
         int searchInsert(std::vector<int>& nums, int target);
+
+        int lengthOfLastWord(std::string s);
     }
 };

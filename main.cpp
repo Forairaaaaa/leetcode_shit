@@ -138,10 +138,15 @@ int main(int argc, char const *argv[])
     // dbg(ret);
 
 
-    std::vector<int> nums = {1,3,5,6};
-    auto ret = searchInsert(nums, 5);
+    // std::vector<int> nums = {1,3,5,6};
+    // auto ret = searchInsert(nums, 5);
+    // dbg(ret);
+    // dbg(nums);
+
+
+    // auto ret = lengthOfLastWord("Hello World");
+    auto ret = lengthOfLastWord("   fly me   to   the moon  ");
     dbg(ret);
-    dbg(nums);
 
 
     return 0;
