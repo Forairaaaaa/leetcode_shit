@@ -23,7 +23,7 @@
 #include <dbg.h>
 
 /* -------------------------------------------------------------------------- */
-/*                                 Normal shit                                */
+/*                                  Algorithm                                 */
 /* -------------------------------------------------------------------------- */
 using namespace std;
 string addBinary(string a, string b)
@@ -105,6 +105,9 @@ string addBinary(string a, string b)
     return result;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                 Normal Main                                */
+/* -------------------------------------------------------------------------- */
 #ifndef GO_BENCHMARK
 int main()
 {
@@ -120,18 +123,11 @@ int main()
 /*                                  Benchmark                                 */
 /* -------------------------------------------------------------------------- */
 #ifdef GO_BENCHMARK
-
-static void _test_function()
-{
-    auto a = 1 + 1;
-    auto b = a * a;
-}
-
 static void BM_LEETCODE(benchmark::State& state)
 {
     for (auto _ : state)
     {
-        _test_function();
+        addBinary("1010", "1011");
     }
 }
 BENCHMARK(BM_LEETCODE);
