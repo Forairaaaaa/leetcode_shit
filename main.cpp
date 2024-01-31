@@ -94,6 +94,13 @@ string addBinary(string a, string b)
         }
     }
 
+    // Remove 0 at front
+    auto first_0_index = result.find_first_not_of('0');
+    if (first_0_index == std::string::npos)
+        result = "0";
+    else
+        result = result.substr(first_0_index);
+
     dbg(result);
     return result;
 }
@@ -104,6 +111,7 @@ int main()
     addBinary("11", "1");
     addBinary("11", "001");
     addBinary("1010", "1011");
+    addBinary("0", "0");
     return 0;
 }
 #endif
