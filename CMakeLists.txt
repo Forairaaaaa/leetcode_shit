@@ -3,10 +3,10 @@ project(leetcode_shit VERSION 0.1.0 LANGUAGES C CXX)
 
 
 file(GLOB_RECURSE LEETCODE_SRC 
-    leetcode/*.cpp
+    # leetcode/*.cpp
 )
 include_directories(
-    leetcode/
+    # leetcode/
 )
 # message(${LEETCODE_SRC})
 
@@ -25,13 +25,13 @@ find_package(benchmark REQUIRED)
 
 
 
-# Enable benchmark
-option(ENABLE_BENCHMARK "google benchmark" OFF)
+# # Enable benchmark
+# option(ENABLE_BENCHMARK "google benchmark" ON)
 
-if(ENABLE_BENCHMARK)
-    add_definitions(-DGO_BENCHMARK)
-    add_definitions(-DDBG_MACRO_DISABLE)
-endif()
+# if(ENABLE_BENCHMARK)
+#     add_definitions(-DGO_BENCHMARK)
+#     add_definitions(-DDBG_MACRO_DISABLE)
+# endif()
 
 
 
