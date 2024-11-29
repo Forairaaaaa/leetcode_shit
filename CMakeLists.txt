@@ -9,9 +9,11 @@ FetchContent_MakeAvailable(dbg_macro)
 # benchmark
 find_package(benchmark REQUIRED)
 
+# format log
+add_subdirectory(dependencies/mooncake_log)
 
 add_executable(leetcode_shit
     main.cpp
 )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE dbg_macro benchmark::benchmark)
+target_link_libraries(${PROJECT_NAME} PRIVATE dbg_macro benchmark::benchmark mooncake_log)

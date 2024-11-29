@@ -8,12 +8,15 @@
  * @copyright Copyright (c) 2023
  *
  */
-#include <algorithm>
 #include <benchmark/benchmark.h>
-#include <cmath>
-#include <cstdio>
+#include <mooncake_log.h>
+#include <algorithm>
 #include <iostream>
+#include <cstdio>
 #include <string>
+#include <cmath>
+#include <vector>
+#include <unordered_map>
 
 // #define GO_BENCHMARK
 
@@ -23,17 +26,21 @@
 #include <dbg.h>
 
 /* -------------------------------------------------------------------------- */
-/*                                  Algorithm                                 */
+/*                                    Shit                                    */
 /* -------------------------------------------------------------------------- */
+using namespace mooncake;
 using namespace std;
+
 void keep_printing_shit()
 {
     for (int i = 0; i < 114514; i++) {
+        std::vector<int> shit{6, 6, 6, 6, 6, 6};
+        mclog::info("shit man, {}", shit);
     }
 }
 
 /* -------------------------------------------------------------------------- */
-/*                                 Normal Main                                */
+/*                                    Main                                    */
 /* -------------------------------------------------------------------------- */
 #ifndef GO_BENCHMARK
 int main()
@@ -50,7 +57,7 @@ int main()
 static void BM_LEETCODE(benchmark::State& state)
 {
     for (auto _ : state) {
-        addBinary("1010", "1011");
+        keep_printing_shit();
     }
 }
 BENCHMARK(BM_LEETCODE);
