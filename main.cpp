@@ -31,7 +31,7 @@
 using namespace mooncake;
 using namespace std;
 
-void keep_printing_shit()
+void shit()
 {
     for (int i = 0; i < 114514; i++) {
         std::vector<int> shit{6, 6, 6, 6, 6, 6};
@@ -45,7 +45,7 @@ void keep_printing_shit()
 #ifndef GO_BENCHMARK
 int main()
 {
-    keep_printing_shit();
+    shit();
     return 0;
 }
 #endif
