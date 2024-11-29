@@ -1,0 +1,12 @@
+[
+    {
+        "url": "https://github.com/sharkdp/dbg-macro.git",
+        "path": "dependencies/dbg-macro",
+        "branch": "v0.5.1"
+    },
+    {
+        "url": "https://github.com/Forairaaaaa/mooncake_log.git",
+        "path": "dependencies/mooncake_log",
+        "branch": "main"
+    }
+]

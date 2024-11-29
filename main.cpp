@@ -26,16 +26,10 @@
 /*                                  Algorithm                                 */
 /* -------------------------------------------------------------------------- */
 using namespace std;
-int climbStairs(int n)
+void keep_printing_shit()
 {
-    // Default 1 step
-    int ways = 1;
-
-    int max_2_step_times = n / 2;
-    dbg(max_2_step_times);
-
-    dbg(ways);
-    return ways;
+    for (int i = 0; i < 114514; i++) {
+    }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -44,8 +38,7 @@ int climbStairs(int n)
 #ifndef GO_BENCHMARK
 int main()
 {
-    climbStairs(2);
-    climbStairs(3);
+    keep_printing_shit();
     return 0;
 }
 #endif
@@ -56,8 +49,7 @@ int main()
 #ifdef GO_BENCHMARK
 static void BM_LEETCODE(benchmark::State& state)
 {
-    for (auto _ : state)
-    {
+    for (auto _ : state) {
         addBinary("1010", "1011");
     }
 }
