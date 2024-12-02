@@ -17,6 +17,7 @@
 #include <cmath>
 #include <vector>
 #include <unordered_map>
+#include "helper.h"
 
 // #define GO_BENCHMARK
 
@@ -27,34 +28,7 @@
 
 using namespace mooncake;
 using namespace std;
-
-/* -------------------------------------------------------------------------- */
-/*                                   Helper                                   */
-/* -------------------------------------------------------------------------- */
-struct ListNode {
-    int val;
-    ListNode* next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode* next) : val(x), next(next) {}
-};
-
-ListNode* helper_create_list_node(std::vector<int> shit)
-{
-    if (shit.empty()) {
-        return nullptr;
-    }
-
-    ListNode* head = new ListNode(shit[0]);
-    ListNode* current = head;
-
-    for (size_t i = 1; i < shit.size(); ++i) {
-        current->next = new ListNode(shit[i]);
-        current = current->next;
-    }
-
-    return head;
-}
+using namespace helper;
 
 /* -------------------------------------------------------------------------- */
 /*                                    Shit                                    */
