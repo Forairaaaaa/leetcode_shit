@@ -9,11 +9,18 @@
  *
  */
 #pragma once
+#include <iostream>
+#include <string>
+#include <unordered_map>
+#include <algorithm>
 #include <vector>
 #include <mooncake_log.h>
 
 namespace helper {
 
+/* -------------------------------------------------------------------------- */
+/*                                    List                                    */
+/* -------------------------------------------------------------------------- */
 struct ListNode {
     int val;
     ListNode* next;
@@ -22,7 +29,7 @@ struct ListNode {
     ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
 
-ListNode* helper_create_list(std::vector<int> shit)
+ListNode* create_list(std::vector<int> shit)
 {
     if (shit.empty()) {
         return nullptr;
@@ -39,7 +46,7 @@ ListNode* helper_create_list(std::vector<int> shit)
     return head;
 }
 
-void helper_print_list(ListNode* head)
+void print_list(ListNode* head)
 {
     ListNode* current = head;
     while (current) {
@@ -48,5 +55,17 @@ void helper_print_list(ListNode* head)
     }
     fmt::print("\n");
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                    Tree                                    */
+/* -------------------------------------------------------------------------- */
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
+};
 
 } // namespace helper
