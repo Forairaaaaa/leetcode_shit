@@ -16,7 +16,7 @@
 #include <vector>
 #include <mooncake_log.h>
 
-namespace helper {
+namespace leetcode_helper {
 
 /* -------------------------------------------------------------------------- */
 /*                                    List                                    */
@@ -68,4 +68,18 @@ struct TreeNode {
     TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
 
-} // namespace helper
+/* -------------------------------------------------------------------------- */
+/*                                    Misc                                    */
+/* -------------------------------------------------------------------------- */
+void print_bar()
+{
+    fmt::println("------");
+}
+
+template <typename... Args>
+void print_shit(Args&&... args)
+{
+    fmt::println("{}", std::forward<Args>(args)...);
+}
+
+} // namespace leetcode_helper
