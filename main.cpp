@@ -18,6 +18,7 @@
 #include <vector>
 #include <unordered_map>
 #include <stack>
+#include <regex>
 #include "helper.h"
 
 // #define GO_BENCHMARK

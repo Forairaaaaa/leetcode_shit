@@ -82,4 +82,10 @@ void print_shit(Args&&... args)
     fmt::println("{}", std::forward<Args>(args)...);
 }
 
+template <typename... Args>
+void print_shit_f(fmt::format_string<Args...> fmt, Args&&... args)
+{
+    fmt::println(fmt, std::forward<Args>(args)...);
+}
+
 } // namespace leetcode_helper
